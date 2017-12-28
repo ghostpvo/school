@@ -1,2 +1,1 @@
-# Project school
-# Hi, my friend
+# school
