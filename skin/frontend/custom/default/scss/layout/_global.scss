@@ -42,3 +42,44 @@ body {
 .wrapper:after {
     @include clearfix;
 }
+
+.main-btn {
+    display: inline-block;
+    padding: 10px 32px;
+    color: #282723;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.8px;
+    background: #fff;
+    transition: all .1s ease;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        background: #282723;
+    }
+}
+
+.blk-header {
+    .blk-header-title {
+        margin: 0;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 600;
+        color: #282723;
+        letter-spacing: 4.7px;
+        line-height: 21px;
+        font-family: $f-stack-special;
+    }
+
+    .blk-header-dscr {
+        margin: 19px 0 0;
+        text-align: center;
+        font-size: 14px;
+        color: #9E9D9A;
+        font-weight: 600;
+        letter-spacing: 2.2px;
+        font-family: $f-stack-sp-second;
+    }
+}

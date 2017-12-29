@@ -95,7 +95,7 @@
          </action>
          <action method="addLinkRel">
             <rel>stylesheet</rel>
-            <href>//fonts.googleapis.com/css?family=Raleway:300,400,500,700,600</href>
+            <href>//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700|Source+Serif+Pro:600,700</href>
          </action>
          <action method="addItem">
             <type>skin_js</type>

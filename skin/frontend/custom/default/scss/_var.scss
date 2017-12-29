@@ -76,6 +76,7 @@ $element-spacing: 7px;
 // Dimensions
 
 $max-content-width: 1200px;
+$max-layout-width: 1460px;
 $max-container-width: $trim + $max-content-width + $trim;
 $max-std-formatted-width: 50em;
 
@@ -210,6 +211,7 @@ $c-email-cell: #F1F1F1;
 $c-email-highlighted-background: #FFFDD9;
 $c-email-highlighted-border: #FFF74C;
 
+
 // =============================================
 // Typography
 // =============================================
@@ -220,7 +222,8 @@ $c-email-highlighted-border: #FFF74C;
 
 $f-stack-sans: 'Helvetica Neue', Verdana, Arial, sans-serif;
 $f-stack-serif: Georgia, Times, 'Times New Roman', serif;
-$f-stack-special: 'Raleway', 'Helvetica Neue', Verdana, Arial, sans-serif;
+$f-stack-special: 'Source Sans Pro', 'Helvetica Neue', Verdana, Arial, sans-serif;
+$f-stack-sp-second: 'Source Serif Pro', 'Times New Roman', serif;
 
 $f-stack-default: $f-stack-sans;
 
