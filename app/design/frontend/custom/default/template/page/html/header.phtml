@@ -1,0 +1,107 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<header class="site-hdr">
+    <div class="site-hdr-account">
+        <a href="" class="site-hdr-acclink">Sign In</a>
+        <span class="site-hdr-acctext">or</span>
+        <a href="" class="site-hdr-acclink">Create an Account</a>
+    </div>
+    <div class="site-hdr-menurow">
+        <ul class="site-hdr-main-menu">
+            <li class="site-hdr-menuitem site-hdr-menuitem-imp"><a href="">STORE</a></li>
+            <li class="site-hdr-menuitem"><a href="">COLLECTION</a></li>
+            <li class="site-hdr-menuitem"><a href="">ABOUT</a></li>
+            <li class="site-hdr-menuitem"><a href="">SALE</a></li>
+            <li class="site-hdr-menuitem"><a href="">BLOG</a></li>
+            <li class="site-hdr-menuitem"><a href="">CONTACT</a></li>
+        </ul>
+        <div class="site-hdr-search-cart">
+            <form class="site-hdr-search">
+                <input type="text" name="" class="site-hdr-txtinp" placeholder="What are you looking for ?">
+                <button class="site-hdr-srchbtn"><i class="icon-search"></i></button>
+            </form>
+            <div class="site-hdr-cart">
+                <div class="dropdown-parent">
+                    <span class="dropdown-parent-swich">
+                        <i class="icon-cart"></i>
+                        <span class="site-hdr-cartcount">10</span>
+                    </span>
+                    <div class="dropdown-parent-object">
+                        <ul class="site-hdr-cartitems">
+                            <li class="site-hdr-cartitem">
+                                <a href="" class="site-hdr-cartitempic">
+                                    <img src="<?php echo $this->getSkinUrl('images/ex/cart-item1.png"');
+                                    ?>" alt="">
+                                </a>
+                                <div class="site-hdr-cartitemdata">
+                                    <a href="" class="site-hdr-cartitemtitle">Brown dress</a>
+                                    <span class="site-hdr-cartitemprice">25.99$</span>
+                                    <dl class="site-hdr-cartitemqty">
+                                        <dt>Qty:</dt>
+                                        <dd><input type="text" name="" class="site-hdr-cartiteminput" value="2"></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="site-hdr-cartitem">
+                                <a href="" class="site-hdr-cartitempic">
+                                    <img src="<?php echo $this->getSkinUrl('images/ex/cart-item1.png"');
+                                    ?>" alt="">
+                                </a>
+                                <div class="site-hdr-cartitemdata">
+                                    <a href="" class="site-hdr-cartitemtitle">Brown dress</a>
+                                    <span class="site-hdr-cartitemprice">25.99$</span>
+                                    <dl class="site-hdr-cartitemqty">
+                                        <dt>Qty:</dt>
+                                        <dd><input type="text" name="" class="site-hdr-cartiteminput" value="2"></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li class="site-hdr-cartitem">
+                                <a href="" class="site-hdr-cartitempic">
+                                    <img src="<?php echo $this->getSkinUrl('images/ex/cart-item1.png"');
+                                    ?>" alt="">
+                                </a>
+                                <div class="site-hdr-cartitemdata">
+                                    <a href="" class="site-hdr-cartitemtitle">Brown dress</a>
+                                    <span class="site-hdr-cartitemprice">25.99$</span>
+                                    <dl class="site-hdr-cartitemqty">
+                                        <dt>Qty:</dt>
+                                        <dd><input type="text" name="" class="site-hdr-cartiteminput" value="2"></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

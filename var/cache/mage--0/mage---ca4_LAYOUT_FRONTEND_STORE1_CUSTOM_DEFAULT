@@ -102,6 +102,10 @@
             <name>js/minicart.js</name>
          </action>
          <action method="addItem">
+            <type>skin_js</type>
+            <name>js/main-ui.js</name>
+         </action>
+         <action method="addItem">
             <type>skin_css</type>
             <name>css/styles-ie8.css</name>
             <params/>

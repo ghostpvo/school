@@ -83,3 +83,9 @@ body {
         font-family: $f-stack-sp-second;
     }
 }
+
+.dropdown-parent {
+    &-object {
+        display: none;
+    }
+}
