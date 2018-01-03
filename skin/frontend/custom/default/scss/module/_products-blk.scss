@@ -32,6 +32,10 @@
                 }
             }
         }
+
+        @include bp (max-width, $bp-xsmall) {
+            width: 100%;
+        }
     }
 
     &-itempic {
