@@ -50,5 +50,9 @@ $j(document).on('ready', function() {
             }
         });
     })();
-    // D
+
+    // Responsive elements
+    $j('.site-hdr-mobmenuswich').on('click', function() {
+        $j(this).next().slideToggle();
+    });
 });

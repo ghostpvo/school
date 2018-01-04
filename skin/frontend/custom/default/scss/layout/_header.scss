@@ -27,315 +27,353 @@
  * Header
  * ============================================ */
 
-@include bp(min-width, $bp-medium + 1) {
+.site-hdr {
+    width: $max-content-width;
+    max-width: 100%;
+    margin: 0 auto 25px;
 
-    .page-header {
-        max-width: $max-container-width;
-        margin: 0 auto;
-        padding: 0 $trim;
+    &-account {
+        padding: 38px 0 22px;
+        text-align: right;
+        transition: all .1s ease;
     }
 
-    .page-header-container {
+    &-acctext,
+    &-acclink {
+        display: inline-block;
+        vertical-align: middle;
+        color: #777775;
+        font-size: 16px;
+        font-family: $f-stack-sp-second;
+        font-weight: 600;
+    }
+
+    &-acctext {
+        padding: 0 3px;
+    }
+
+    &-acclink {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            color: $c-dark;
+        }
+    }
+
+    &-menurow {
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-}
-
-.header-language-container,
-.page-header {
-    font-family: $f-stack-special;
-}
-
-/* ============================================ *
- * Language switcher + welcome message
- * ============================================ */
-
-.header-language-background {
-    padding: $gap;
-    background-color: $c-action;
-    text-transform: uppercase;
-
-    .header-language-container {
-        max-width: $max-content-width;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    &:after {
-        @include clearfix;
-    }
-
-    .form-language,
-    .currency-switcher {
-        float: left;
-        margin-right: $gap;
-    }
-
-    .welcome-msg {
-        float: right;
-    }
-}
-
-.page-header-container .store-language-container {
-    float: right;
-    max-width: 35%;
-    padding: 13px 15px 10px 10px;
-
-    label {
+    &-mobmenuswich {
         display: none;
+        font-size: 20px;
+        color: $c-dark;
     }
-    select {
-        max-width: 100%;
-    }
-}
 
-@include bp(max-width, $bp-xsmall) {
-    .page-header-container .store-language-container {
-        padding-top: 8px;
+    &-menuitem {
+        display: inline-block;
+        vertical-align: middle;
 
-        select {
-            // Setting this font-size will causing zooming on iOs devices, but it keeps header more tidy
-            font-size: $f-size-xs;
+        > a {
+            display: block;
+            padding: 8px 25px;
+            color: #282723;
+            font-size: 22px;
+            text-decoration: none;
+            transition:  all .1s linear;
+            font-family: $f-stack-special;
+
+            &:hover {
+                background: #fff - #111
+            }
+        }
+
+        &-imp {
+            > a {
+                padding: 8px 38px;
+                color: #fff;
+                background: #282723;
+
+                &:hover {
+                    background: #282723 + #111;
+                }
+            }
         }
     }
-}
 
-.header-language-background,
-.header-language-background a {
-    color: $c-text-white;
-}
-
-@include bp(max-width, $bp-medium) {
-
-    .header-language-background {
-        display: none;
+    &-search-cart {
+        position: relative;
+        text-align: right;
     }
 
-}
+    &-search {
+        display: inline-block;
+        vertical-align: middle;
+        width: 292px;
+        font-size: 0;
 
-/* ============================================ *
- * Logo
- * ============================================ */
+        *:focus {
+            outline: none;
+        }
 
-.logo {
-    display: block;
-    float: left;
-    width: 65%;
-    min-width: 100px;
-    min-height: 44px;
-    text-align: center;
-    padding: $gap;
+        .site-hdr-txtinp {
+            display: inline-block;
+            vertical-align: middle;
+            width: 248px;
+            height: 38px;
+            padding: 0 14px;
+            font-family: $f-stack-sp-second;
+            background: #E1DFE0;
+            border: none;
 
-    img {
-        max-width: 100%;
+            &::-webkit-input-placeholder {
+                color: #282723;
+            }
+            &::-moz-placeholder {
+                color: #282723;
+            }
+            &:-ms-input-placeholder {
+                color: #282723;
+            }
+            &:-moz-placeholder {
+                color: #282723;
+            }
+        }
     }
 
-    .small {
+    &-srchbtn {
+        display: inline-block;
+        vertical-align: middle;
+        width: 38px;
+        height: 38px;
+        margin-left: 6px;
+        line-height: 38px;
+        text-align: center;
+        font-size: 20px;
+        color: #fff;
+        border: none;
+        background: $c-dgray;
+        transition: all .1s ease;
+
+        &:hover {
+            background: $c-dark;
+        }
+    }
+
+    &-cart {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0;
+
+        .dropdown-parent-swich {
+            position: relative;
+            display: block;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            background: $c-dgray;
+            cursor: pointer;
+            transition: all .1s ease;
+
+            &:hover {
+                background: $c-dark;
+            }
+        }
+
+        .dropdown-parent-object {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            left: 0;
+            padding: 25px;
+            background: $c-dgray-opacity;
+            z-index: 3;
+            max-height: 550px;
+            overflow: auto;
+        }
+    }
+
+    &-cartcount {
+        position: absolute;
+        top: 13px;
+        left: 11px;
+        width: 15px;
+        padding: 0 2px;
+        color: $c-dark;
+        font-size: 12px;
+        line-height: 14px;
+        font-family: $f-stack-special;
+        background: #fff;
+    }
+
+    &-cartitem {
         display: block;
-    }
-    .large {
-        display: none;
-    }
-}
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 0;
 
-.logo:hover {
-    opacity: 0.8;
-}
+        a {
+            padding: 0;
 
-// ---------------------------------------------
-
-@include bp(min-width, $bp-medium + 1) {
-
-    .logo {
-        max-width: 300px;
-        min-height: 90px;
-
-        .small {
-            display: none;
+            &:hover {
+                background: transparent;
+            }
         }
-        .large {
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-cartitempic {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 75px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &-cartitemdata {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 94px;
+        margin-left: -75px;
+        margin-top: -5px;
+        width: 100%;
+        text-align: left;
+    }
+
+    &-cartitemtitle {
+        display: block;
+        font-size: 16px;
+        color: $c-dark;
+        font-family: $f-stack-sp-second;
+
+        &:hover {
+            color: $c-dark;
+        }
+    }
+
+    &-cartitemprice {
+        font-family: $f-stack-sp-second;
+        font-weight: 600;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    &-cartitemqty {
+        padding-top: 5px;
+
+        dt {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        dd {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 10px;
+        }
+    }
+
+    .site-hdr-cartiteminput {
+        width: 40px;
+        font-size: 14px;
+        color: $c-dark;
+        text-align: center;
+        border: none;
+        background: #fff;
+    }
+
+    @include bp(max-width, 1260px) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include bp(max-width, $bp-xlarge) {
+        &-menuitem {
+            > a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+
+            &-imp {
+                > a {
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }
+
+    @include bp(max-width, $bp-large) {
+        &-account,
+        &-search-cart {
+            text-align: left;
+        }
+
+        &-search-cart {
+            width: 335px;
+            margin-top: 22px;
+        }
+
+        &-menurow {
             display: block;
         }
     }
 
-}
+    @include bp(max-width, 590px) {
+        &-mobmenuswich {
+            display: block;
+        }
 
-/* ============================================ *
- * Skip Links
- * ============================================ */
+        &-menuitem {
+            display: block;
+        }
 
-.skip-links {
-    clear: both;
-    overflow: hidden;
-    border-top: 1px solid #EDEDED;
-    border-bottom: 1px solid #EDEDED;
-}
-
-// ---------------------------------------------
-
-@include bp(min-width, $bp-medium + 1) {
-
-    .skip-links {
-        border: 0;
+        &-main-menu {
+            display: none;
+            margin-top: 22px;
+        }
     }
 
-}
+    @include bp(max-width, $bp-xsmall) {
+        padding: 0 15px;
+        margin-bottom: 0;
 
-/* -------------------------------------------- *
- * Skip - Link
- */
+        &-search-cart {
+            width: 100%;
+            font-size: 0;
+        }
 
-.skip-link {
-    position: relative;
-    float: left;
-    width: 20%;
-    height: 44px;
-    background: #FFFFFF;
-    color: $c-text;
-    line-height: 42px;
-    text-align: center;
-}
+        &-search {
+            position: relative;
+            width: 100%;
+            padding-right: 88px;
+            margin-right: -38px;
 
-a.skip-link {
-    text-decoration: none;
-}
+            .site-hdr-txtinp {
+                width: 100%;
+            }
 
-.skip-link:not(.skip-active):hover {
-    opacity: 0.8;
-}
-
-// ---------------------------------------------
-
-@include bp(max-width, $bp-medium) {
-
-    .skip-link {
-        border-right: 1px solid #EDEDED;
-    }
-
-    .skip-link:last-child {
-        border-right: 0;
-    }
-
-}
-
-// ---------------------------------------------
-
-@include bp(min-width, 500px) {
-
-    .skip-link {
-        width: 25%;
-    }
-
-}
-
-/* -------------------------------------------- *
- * Skip Link - Active
- */
-@include bp(max-width, $bp-medium) {
-
-    .skip-link.skip-active {
-        background: #EDEDED;
-        color: inherit;
-    }
-
-    .skip-link.skip-active span {
-        color: inherit;
-    }
-
-}
-
-/* -------------------------------------------- *
- * Skip Link - Icon
- */
-
-.skip-link .icon {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-}
-
-.skip-link.skip-nav .icon,
-.skip-link.skip-cart:not(.no-count) .icon {
-    margin-right: 3px;
-}
-
-@include bp(min-width, 500px) {
-
-    .skip-link .icon {
-        margin-right: 3px;
-    }
-
-}
-
-/* -------------------------------------------- *
- * Skip Link - Label
- */
-
-.skip-link .label {
-    display: none;
-}
-
-// ---------------------------------------------
-
-@include bp(min-width, 500px) {
-
-    .skip-link .label {
-        display: inline;
-    }
-
-}
-
-/* ============================================ *
- * Skip Content
- * ============================================ */
-
-.skip-content {
-    display: none;
-}
-
-.skip-content.skip-active {
-    display: block;
-    background: #EDEDED;
-}
-
-/* ============================================ *
- * Global Header Navigation
- * ============================================ */
-
-@include bp(max-width, $bp-medium) {
-    // ---------------------------------------------
-    // Link
-
-    #header-account li a,
-    .nav-primary a.level0 {
-        padding: 0 15px 0 25px;
-        border-bottom: 1px solid $c-module-border;
-        text-align: left;
-        color: $c-text;
-        text-transform: uppercase;
-        line-height: 30px;
-    }
-
-    #header-account li:last-child a,
-    .nav-primary li.level0:last-child a.level0 {
-        border-bottom: 0;
-    }
-
-    .no-touch #header-account a:hover,
-    .no-touch .nav-primary a:hover {
-        background-color: $c-module-background;
-        text-decoration: none;
-    }
-
-}
-
-.account-cart-wrapper {
-    position: absolute;
-    top:0px;
-    right:0px;
-
-    @include bp(max-width, $bp-medium) {
-        position: static;
+            .site-hdr-srchbtn {
+                position: absolute;
+                top: 0;
+                right: 44px;
+            }
+        }
     }
 }
