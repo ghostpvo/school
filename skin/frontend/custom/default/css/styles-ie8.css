@@ -2657,6 +2657,99 @@ form .form-instructions {
   display: none;
 }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
 /* ============================================ *
  * Global
  * ============================================ */
@@ -8493,6 +8586,99 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
   font-size: 16px;
   line-height: 19px;
   font-family: "Source Serif Pro", "Times New Roman", serif;
+}
+
+.we-recommend-menu {
+  white-space: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.we-recommend-menu-item {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 47px;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.we-recommend-menu-item-active {
+  color: #e31837;
+  border-bottom-color: #e31837;
+}
+.we-recommend-contens-data {
+  padding: 40px 0;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+}
+.we-recommend-contens-data *:focus {
+  outline: none;
+}
+.we-recommend-contens-data .slick-dots {
+  padding-top: 7px;
+  text-align: center;
+}
+.we-recommend-contens-data .slick-dots li {
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+  font-size: 0;
+}
+.we-recommend-contens-data .slick-dots li button {
+  height: 4px;
+  width: 20px;
+  font-size: 0;
+  background: #E0E0E0;
+  border: none;
+  transition: all .3s ease;
+}
+.we-recommend-contens-data .slick-dots li button:hover {
+  background: #757575;
+}
+.we-recommend-contens-data .slick-dots li.slick-active button {
+  background: #757575;
+  cursor: default;
+}
+.we-recommend-item {
+  padding: 0 20px;
+  text-align: center;
+}
+.we-recommend-item-link {
+  display: block;
+  text-decoration: none;
+}
+.we-recommend-item .we-recommend-item-pic {
+  display: inline-block;
+  max-width: 100%;
+}
+.we-recommend-item-title {
+  display: block;
+  height: 60px;
+  margin: 15px 0;
+  color: #568da7;
+  font-size: 16px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.we-recommend-item-old-price {
+  display: block;
+  line-height: 14px;
+  font-size: 12px;
+  color: #525252;
+  text-decoration: line-through;
+}
+.we-recommend-item-new-price {
+  display: block;
+  color: #e31837;
+  font-size: 20px;
+}
+.we-recommend-item-price {
+  display: block;
+  padding-top: 14px;
+  font-size: 20px;
+  color: #525252;
 }
 
 /* ============================================ *
