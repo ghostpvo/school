@@ -1,0 +1,27 @@
+#IDE settings
+/.project
+/.metadata
+/.settings
+/.buildpath
+/.classpath
+/.idea/*
+*.iml
+/nbproject
+*.codekit
+.sass-cache
+
+# Magento
+/app/etc/local.xml
+/errors/local.xml
+/media/
+/var/*
+!/var/.htaccess
+/google*.html
+/downloader/.cache/*
+/downloader/cache.cfg
+/downloader/connect.cfg
+/includes/src/*
+/.htaccess
+/aju
+/university
+
