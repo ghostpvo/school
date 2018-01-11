@@ -39,11 +39,12 @@
 @import "core/common";
 @import "core/form";
 @import "core/table";
+@import "../fonts/icomoon/style.css";
 
 // ----------------------------------------------
 // Vendor
 
-// @import "vendor/abc";
+@import "vendor/slick";
 
 // ----------------------------------------------
 // Layout
@@ -95,6 +96,7 @@
 @import "module/homepage-offer";
 @import "module/products-blk";
 @import "module/blog-items";
+@import "module/we-recomend";
 
 // ----------------------------------------------
 // Override

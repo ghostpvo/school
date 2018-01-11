@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Custom_Design>
+            <version>1.0.0</version>
+        </Custom_Design>
+    </modules>
+    <frontend>
+        <routers>
+            <customdesign>
+                <use>standard</use>
+                <args>
+                    <module>Custom_Design</module>
+                    <frontName>custom</frontName>
+                </args>
+            </customdesign>
+        </routers>
+        <layout>
+            <updates>
+                <customdesign>
+                    <file>custom_design.xml</file>
+                </customdesign>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <models>
+            <customdesign>
+                <resourceModel>customdesign_resource</resourceModel>
+            </customdesign>
+            <customdesign_resource>
+                <entities>
+                    <table_content>
+                        <table>ds_news_entities</table>
+                    </table_content>
+                </entities>
+            </customdesign_resource>
+        </models>
+
+
+        <resources>
+            <customdesign_setup>
+                <setup>
+                    <module>Custom_Design</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </customdesign_setup>
+            <customdesign_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </customdesign_write>
+            <customdesign_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </customdesign_read>
+        </resources>
+
+    </global>
+</config>

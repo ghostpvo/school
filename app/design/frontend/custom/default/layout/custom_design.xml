@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layout>
+    <!--<customdesign_index_index>
+        <reference name="content">
+            <block type="core/template" template="page/custom_design/index.phtml" />
+        </reference>
+    </customdesign_index_index>-->
+    <!--<cms_index_index>
+        <reference name="content">
+            <block type="core/template" template="page/custom_design/home.phtml" />
+        </reference>
+    </cms_index_index>-->
+</layout>
