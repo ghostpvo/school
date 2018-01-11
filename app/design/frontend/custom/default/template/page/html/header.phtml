@@ -33,10 +33,17 @@
         <a href="" class="site-hdr-acclink">Sign In</a>
         <span class="site-hdr-acctext">or</span>
         <a href="" class="site-hdr-acclink">Create an Account</a>
+        <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+            <span class="icon"></span>
+            <span class="label"><?php echo $this->__('Account'); ?></span>
+        </a>
     </div>
     <div class="site-hdr-menurow">
+        <span class="site-hdr-mobmenuswich"><i class="icon-menu"></i></span>
+        <a href="<?php echo $this->getUrl('') ?>" class="site-hdr-logo">
+            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
+        </a>
         <ul class="site-hdr-main-menu">
-            <li class="site-hdr-menuitem site-hdr-menuitem-imp"><a href="">STORE</a></li>
             <li class="site-hdr-menuitem"><a href="">COLLECTION</a></li>
             <li class="site-hdr-menuitem"><a href="">ABOUT</a></li>
             <li class="site-hdr-menuitem"><a href="">SALE</a></li>
@@ -44,16 +51,18 @@
             <li class="site-hdr-menuitem"><a href="">CONTACT</a></li>
         </ul>
         <div class="site-hdr-search-cart">
-            <form class="site-hdr-search">
-                <input type="text" name="" class="site-hdr-txtinp" placeholder="What are you looking for ?">
-                <button class="site-hdr-srchbtn"><i class="icon-search"></i></button>
-            </form>
+            <div class="skip-content site-hdr-search">
+                <?php echo $this->getChildHtml('topSearch') ?>
+            </div>
             <div class="site-hdr-cart">
                 <div class="dropdown-parent">
                     <span class="dropdown-parent-swich">
                         <i class="icon-cart"></i>
                         <span class="site-hdr-cartcount">10</span>
                     </span>
+                    <div class="header-minicart">
+                        <?php echo $this->getChildHtml('minicart_head'); ?>
+                    </div>
                     <div class="dropdown-parent-object">
                         <ul class="site-hdr-cartitems">
                             <li class="site-hdr-cartitem">
