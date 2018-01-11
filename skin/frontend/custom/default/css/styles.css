@@ -3380,6 +3380,9 @@ body {
 .site-hdr-search *:focus {
   outline: none;
 }
+.site-hdr-search .input-box {
+  padding-top: 0;
+}
 .site-hdr-search .site-hdr-txtinp {
   display: inline-block;
   vertical-align: middle;
