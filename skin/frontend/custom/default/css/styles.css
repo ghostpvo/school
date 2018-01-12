@@ -10769,6 +10769,24 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
   font-family: "Source Serif Pro", "Times New Roman", serif;
 }
 
+.block-subscribe {
+  padding: 50px 0;
+  background: #282723;
+}
+
+/* ============================================ *
+ * Calendar styles (restore styles from /js/calendar)
+ * ============================================ */
+div.calendar table {
+  border-collapse: separate;
+}
+div.calendar table td.button {
+  display: table-cell;
+  background: inherit;
+  color: inherit;
+  text-transform: none;
+}
+
 .we-recommend-menu {
   white-space: nowrap;
   overflow: auto;
@@ -10865,17 +10883,4 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
   .we-recommend-item-price, .we-recommend-item-new-price {
     font-size: 16px;
   }
-}
-
-/* ============================================ *
- * Calendar styles (restore styles from /js/calendar)
- * ============================================ */
-div.calendar table {
-  border-collapse: separate;
-}
-div.calendar table td.button {
-  display: table-cell;
-  background: inherit;
-  color: inherit;
-  text-transform: none;
 }

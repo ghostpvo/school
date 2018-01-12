@@ -96,8 +96,11 @@
 @import "module/homepage-offer";
 @import "module/products-blk";
 @import "module/blog-items";
-@import "module/we-recomend";
+@import "module/block-subscribe";
 
 // ----------------------------------------------
 // Override
 @import "override/plugin";
+
+// Tests
+@import "module/we-recomend";
