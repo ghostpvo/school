@@ -34,17 +34,11 @@
         <a href="<?php echo Mage::getUrl('customer/account/create/'); ?>" class="site-hdr-acclink">Create an Account</a>
     </div>
     <div class="site-hdr-menurow">
-        <span class="site-hdr-mobmenuswich"><i class="icon-menu"></i></span>
         <a href="<?php echo $this->getUrl('') ?>" class="site-hdr-logo">
             <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
         </a>
-        <ul class="site-hdr-main-menu">
-            <li class="site-hdr-menuitem"><a href="">COLLECTION</a></li>
-            <li class="site-hdr-menuitem"><a href="">ABOUT</a></li>
-            <li class="site-hdr-menuitem"><a href="">SALE</a></li>
-            <li class="site-hdr-menuitem"><a href="">BLOG</a></li>
-            <li class="site-hdr-menuitem"><a href="">CONTACT</a></li>
-        </ul>
+        <span class="site-hdr-mobmenuswich"><i class="icon-menu"></i></span>
+        <?php echo $this->getChildHtml('header_mainmenu') ?>
         <div class="site-hdr-search-cart">
             <div class="skip-content site-hdr-search">
                 <?php echo $this->getChildHtml('topSearch') ?>

@@ -329,6 +329,17 @@
             text-align: left;
         }
 
+        &-logo {
+            display: block;
+            margin-bottom: 22px;
+        }
+
+        .site-hdr-menuitem {
+            > a {
+                padding: 2px 20px 2px 0;
+            }
+        }
+
         &-search-cart {
             width: 335px;
             margin-top: 22px;
@@ -337,6 +348,12 @@
         &-menurow {
             display: block;
         }
+    }
+
+    @include bp(min-width, 591px) {
+         .site-hdr-main-menu {
+             display: inline-block!important;
+         }
     }
 
     @include bp(max-width, 590px) {
@@ -350,7 +367,7 @@
 
         &-main-menu {
             display: none;
-            margin-top: 22px;
+            margin-top: 5px;
         }
     }
 

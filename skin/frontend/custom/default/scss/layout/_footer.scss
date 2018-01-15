@@ -36,6 +36,16 @@
     font-family: $f-stack-special;
 }
 
+.footer-before-container {
+    max-width: $max-layout-width;
+    margin: -30px auto 0;
+    padding: 0 30px;
+
+    @include bp (max-width, $bp-small) {
+        padding: 0 15px;
+    }
+}
+
 .footer {
     padding: 62px 15px;
 
