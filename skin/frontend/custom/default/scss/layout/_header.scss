@@ -294,12 +294,27 @@
     }
 
     .site-hdr-cartiteminput {
+        display: inline-block;
+        vertical-align: middle;
         width: 40px;
+        height: 30px;
         font-size: 14px;
         color: $c-dark;
         text-align: center;
         border: none;
         background: #fff;
+        border-radius: 0;
+    }
+
+    .quantity-button {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px 10px;
+        line-height: 20px;
+    }
+
+    .header-minicart .empty {
+        font-size: 14px;
     }
 
     @include bp(max-width, 1260px) {

@@ -1,11 +1,16 @@
 <?php
+
 /* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
+
 $installer->startSetup();
+
 Mage::getModel('core/config')
     ->saveConfig('design/header/logo_src', 'images/logo.png', 'default', 0);
+
 Mage::getModel('core/config')
     ->saveConfig('design/footer/copyright', '&copy; 2017 Store.', 'default', 0);
+
 $footerInformation = <<<HTML
 <div class="footer-menu-group">
 <h4 class="footer-menu-title">INFORMATION</h4>
@@ -17,11 +22,18 @@ $footerInformation = <<<HTML
 </ul>
 </div>
 HTML;
-$footerInformation = ['content' => $footerInformation];
+$footerInfoData = [
+    'content' => $footerInformation,
+    'identifier' => 'footer_second_info',
+    'title' => 'Footer INFORMATION',
+    'is_active' => 1
+    ];
+
 Mage::getModel('cms/block')
-    ->load(4)
-    ->addData($footerInformation)
+    ->addData($footerInfoData)
+    ->setStores([0,1])
     ->save();
+
 $footerCustomer = <<<HTML
 <div class="footer-menu-group">
 <h4 class="footer-menu-title">CUSTOMER SERVICE</h4>
@@ -34,10 +46,18 @@ $footerCustomer = <<<HTML
 </ul>
 </div>
 HTML;
-$footerCustomer = ['content' => $footerCustomer];
+$footerCustomerData = [
+    'content' => $footerCustomer,
+    'identifier' => 'footer_second_customserv',
+    'title' => 'Footer CUSTOMER SERVICE',
+    'is_active' => 1
+];
+
 Mage::getModel('cms/block')
-    ->load(5)
-    ->addData($footerCustomer)
+    ->addData($footerCustomerData)
+    ->setStores([0,1])
     ->save();
+
 Mage::getModel('core/config')->reinit();
+
 $installer->endSetup();

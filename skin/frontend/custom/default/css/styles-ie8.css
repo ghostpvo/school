@@ -3044,12 +3044,25 @@ body {
   padding-left: 10px;
 }
 .site-hdr .site-hdr-cartiteminput {
+  display: inline-block;
+  vertical-align: middle;
   width: 40px;
+  height: 30px;
   font-size: 14px;
   color: #282723;
   text-align: center;
   border: none;
   background: #fff;
+  border-radius: 0;
+}
+.site-hdr .quantity-button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px 10px;
+  line-height: 20px;
+}
+.site-hdr .header-minicart .empty {
+  font-size: 14px;
 }
 .site-hdr-menuitem > a {
   padding: 5px 10px;

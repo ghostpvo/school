@@ -143,10 +143,10 @@
 
             <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
                 <block type="cms/block" name="footer_customerservice_links">
-                    <action method="setBlockId"><block_id>footer_customerservice</block_id></action>
+                    <action method="setBlockId"><block_id>footer_second_customserv</block_id></action>
                 </block>
                 <block type="cms/block" name="footer_information_links">
-                    <action method="setBlockId"><block_id>footer_info</block_id></action>
+                    <action method="setBlockId"><block_id>footer_second_info</block_id></action>
                 </block>
             </block>
 

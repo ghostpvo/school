@@ -23,7 +23,7 @@ $j(document).on('ready', function() {
 
         $j(document).on('click', function(e) {
             if ($j(e.target).closest('.dropdown-parent').length) {
-                return false;
+                // return false;
             } else {
                 goHideaway();
             }

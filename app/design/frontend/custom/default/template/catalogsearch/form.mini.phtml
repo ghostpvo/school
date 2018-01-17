@@ -30,7 +30,7 @@ $catalogSearchHelper =  $this->helper('catalogsearch');
 
 <form action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
     <div class="input-box">
-        <input type="search" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="site-hdr-txtinp input-text required-entry" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" placeholder="<?php echo $this->quoteEscape($this->__('Search entire store here...')) ?>" />
+        <input type="search" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" class="site-hdr-txtinp input-text required-entry" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" placeholder="<?php echo $this->quoteEscape($this->__('What are you looking for ?')) ?>" />
         <button type="submit" title="<?php echo $this->quoteEscape($this->__('Search')) ?>" class="site-hdr-srchbtn"><i class="icon-search"></i></button>
     </div>
 
