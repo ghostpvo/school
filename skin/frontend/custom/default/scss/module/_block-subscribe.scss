@@ -1,28 +1,31 @@
 .block-subscribe {
-    padding: 45px 45px;
+    margin-bottom: 0;
+    padding: 45px 117px 45px 45px;
     text-align: center;
     background: #282723;
 
     &-title {
         display: inline-block;
         vertical-align: middle;
+        letter-spacing: 0.65px;
         color: #fff;
-        font-family: $f-stack-special;
+        font-family: $f-stack-sp-second;
         font-size: 16px;
     }
 
     &-form {
         position: relative;
         display: inline-block;
-        width: 420px;
+        width: 424px;
         vertical-align: middle;
-        margin-left: 75px;
+        margin-left: 49px;
         padding-right: 126px;
 
         .input-text {
             width: 100%;
             height: 40px;
             padding: 0 12px;
+            letter-spacing: 0.5px;
             font-size: 14px;
             font-family: $f-stack-sp-second;
             background: #E1DFE0;
@@ -72,7 +75,10 @@
     }
 
     @include bp (max-width, $bp-xlarge) {
+        padding-right: 45px;
+
         .block-subscribe-form {
+            width: 335px;
             margin-left: 35px;
         }
     }
@@ -83,6 +89,7 @@
         }
 
         .block-subscribe-form {
+            width: 410px;
             margin-left: 0;
             margin-top: 15px;
         }
