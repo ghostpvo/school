@@ -3069,6 +3069,9 @@ body {
 .site-hdr .header-minicart .empty {
   font-size: 14px;
 }
+.site-hdr .site-hdr-main-menu {
+  padding-right: 0;
+}
 .site-hdr-menuitem > a {
   padding: 5px 10px;
   font-size: 18px;
