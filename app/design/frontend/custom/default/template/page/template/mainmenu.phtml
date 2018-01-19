@@ -1,5 +1,47 @@
 <ul class="site-hdr-main-menu">
-    <li class="site-hdr-menuitem"><a href="<?php echo Mage::getUrl('colection/'); ?>">COLLECTION</a></li>
+    <li class="site-hdr-menuitem">
+        <a href="<?php echo Mage::getUrl('colection/'); ?>">COLLECTION</a>
+        <div class="site-hdr-menu-dropdown">
+            <div class="site-hdr-wrap">
+                <div class="site-hdr-menu-category">
+                    <strong class="site-hdr-menudrop-title">CATEGORIES</strong>
+                    <ul class="site-hdr-category-items">
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('coats-jakets.html/'); ?>" class="site-hdr-category-link">Coats &amp; Jakets</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('blouse.html/'); ?>" class="site-hdr-category-link">Blouse</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('jeans.html/'); ?>" class="site-hdr-category-link">Jeans</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('pants.html/'); ?>" class="site-hdr-category-link">Pants</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('jackets-coats.html/'); ?>" class="site-hdr-category-link">Jackets &amp; Coats</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('knits.html/'); ?>" class="site-hdr-category-link">Knits</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('blouses.html/'); ?>" class="site-hdr-category-link">Blouses</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('tops-t-shirts.html/'); ?>" class="site-hdr-category-link">Tops &amp; T-Shirts</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('dresses-skirts.html/'); ?>" class="site-hdr-category-link">Dresses &amp; Skirts</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('accessories.html/'); ?>" class="site-hdr-category-link">Accessories</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('shoes.html/'); ?>" class="site-hdr-category-link">Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="site-hdr-menu-category">
+                    <strong class="site-hdr-menudrop-title">BRANDS</strong>
+                    <ul class="site-hdr-category-items">
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('armani.html/'); ?>" class="site-hdr-category-link">Armani</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('balenciaga.html/'); ?>" class="site-hdr-category-link">Balenciaga</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('burberry.html/'); ?>" class="site-hdr-category-link">Burberry</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('carrera-y-carrera.html/'); ?>" class="site-hdr-category-link">Carrera y Carrera</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('dkny.html/'); ?>" class="site-hdr-category-link">DKNY</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('fendi.html/'); ?>" class="site-hdr-category-link">Fendi</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('gucci.html/'); ?>" class="site-hdr-category-link">Gucci</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('h-huntsman-sons.html/'); ?>" class="site-hdr-category-link">H.Huntsman &amp; Sons</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('marc-jacobs.html/'); ?>" class="site-hdr-category-link">Marc Jacobs</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('karen-kane.html/'); ?>" class="site-hdr-category-link">Karen Kane</a></li>
+                        <li class="site-hdr-category-item"><a href="<?php echo Mage::getUrl('lacoste.html/'); ?>" class="site-hdr-category-link">Lacoste</a></li>
+                    </ul>
+                </div>
+                <div class="site-hdr-menu-additional">
+                    <strong class="site-hdr-menudrop-title">WHAT’S NEW ?</strong>
+                    <?php echo $this->getChildHtml('header_menu_additional') ?>
+                </div>
+            </div>
+        </div>
+    </li>
     <li class="site-hdr-menuitem"><a href="<?php echo Mage::getUrl('about-magento-demo-store/'); ?>">ABOUT</a></li>
     <li class="site-hdr-menuitem"><a href="<?php echo Mage::getUrl('sale/'); ?>">SALE</a></li>
     <li class="site-hdr-menuitem"><a href="<?php echo Mage::getUrl('blog/'); ?>">BLOG</a></li>

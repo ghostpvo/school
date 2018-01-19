@@ -94,7 +94,11 @@
             <block type="page/html_header" name="header" as="header">
                 <block type="page/template_links" name="top.links" as="topLinks"/>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
-                <block type="page/template_links" name="header_mainmenu" as="header_mainmenu" template="page/template/mainmenu.phtml"/>
+                <block type="page/template_links" name="header_mainmenu" as="header_mainmenu" template="page/template/mainmenu.phtml">
+                    <block type="cms/block" name="header_menu_additional">
+                        <action method="setBlockId"><block_id>header_menu_additional</block_id></action>
+                    </block>
+                </block>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
                     <label>Navigation Bar</label>
                     <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
@@ -134,12 +138,6 @@
                 <label>Page Footer</label>
                 <action method="setElementClass"><value>footer-before-container</value></action>
             </block>
-
-            <!--<block type="newsletter/subscribe" name="newsletter" as="newsletter" template="newsletter/subscribe.phtml" output="toHtml"/>-->
-
-            <!--<reference name="footer">-->
-                <!--<remove name="footer.newsletter"/>-->
-            <!--</reference>-->
 
             <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
                 <block type="cms/block" name="footer_customerservice_links">

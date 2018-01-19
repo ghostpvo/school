@@ -3,9 +3,13 @@
  * ============================================ */
 
 .site-hdr {
-    width: $max-content-width;
-    max-width: 100%;
-    margin: 0 auto 25px;
+    position: relative;
+
+    &-wrap {
+        width: $max-content-width;
+        max-width: 100%;
+        margin: 0 auto 25px;
+    }
 
     &-account {
         padding: 27px 0 22px;
@@ -37,7 +41,6 @@
     }
 
     &-menurow {
-        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -58,6 +61,7 @@
         vertical-align: middle;
 
         > a {
+            position: relative;
             display: block;
             padding: 8px 23px;
             color: #282723;
@@ -67,8 +71,21 @@
             transition:  all .1s linear;
             font-family: $f-stack-special;
 
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 23px;
+                right: 23px;
+                height: 2px;
+                content: "";
+                background: transparent;
+                transition: all .1s ease;
+            }
+
             &:hover {
-                background: #fff - #111
+                &:after {
+                    background: $c-dark;
+                }
             }
         }
 
@@ -83,11 +100,113 @@
                 }
             }
         }
+
+        &:hover {
+            .site-hdr-menu-dropdown {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &-menu-dropdown {
+        position: absolute;
+        top: 123px;
+        left: 0;
+        z-index: 3;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        padding: 40px 0 19px;
+        background: #fff;
+        transition: all .3s ease;
+
+        .site-hdr-wrap {
+            font-size: 0;
+
+            &:after {
+                display: block;
+                clear: both;
+                content: "";
+            }
+        }
+    }
+
+    &-menu-category {
+        display: inline-block;
+        vertical-align: top;
+        width: 338px;
+        padding-left: 12px;
+    }
+
+    &-category-items {
+
+    }
+
+    &-category-item {
+        a {
+            font-size: 16px;
+            color: $c-dark;
+            text-decoration: none;
+            letter-spacing: 0.7px;
+            font-family: $f-stack-special;
+
+            &:hover {
+                color: $c-dark + #333;
+            }
+        }
+    }
+
+    &-menudrop-title {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: #777775;
+        font-weight: 400;
+        font-family: $f-stack-special;
+    }
+
+    &-menu-additional {
+        float: right;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    &-additional-link {
+        display: block;
+        padding-top: 8px;
+
+        &:hover {
+            text-decoration: none;
+
+            .site-hdr-additional-text {
+                color: $c-dark + #333;
+            }
+        }
+    }
+
+    &-additional-pic {
+        max-width: 100%;
+    }
+
+    &-additional-text {
+        display: block;
+        margin-top: 19px;
+        padding-right: 60px;
+        font-size: 16px;
+        color: $c-dark;
+        line-height: 20px;
+        letter-spacing: 0.95px;
+        text-decoration: none;
+        font-family: $f-stack-special;
     }
 
     &-search-cart {
         position: relative;
         text-align: right;
+        line-height: 20px;
     }
 
     &-search {

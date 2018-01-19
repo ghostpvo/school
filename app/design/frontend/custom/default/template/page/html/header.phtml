@@ -29,24 +29,26 @@
 ?>
 
 <header class="site-hdr">
-    <div class="site-hdr-account">
-        <a href="<?php echo Mage::getUrl('customer/account/login/'); ?>" class="site-hdr-acclink">Sign In</a>
-        <span class="site-hdr-acctext">or</span>
-        <a href="<?php echo Mage::getUrl('customer/account/create/'); ?>" class="site-hdr-acclink">Create an Account</a>
-    </div>
-    <div class="site-hdr-menurow">
-        <a href="<?php echo $this->getUrl('') ?>" class="site-hdr-logo">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
-        </a>
-        <span class="site-hdr-mobmenuswich"><i class="icon-menu"></i></span>
-        <?php echo $this->getChildHtml('header_mainmenu') ?>
-        <div class="site-hdr-search-cart">
-            <div class="skip-content site-hdr-search">
-                <?php echo $this->getChildHtml('topSearch') ?>
-            </div>
-            <div class="site-hdr-cart">
-                <div class="header-minicart">
-                    <?php echo $this->getChildHtml('minicart_head'); ?>
+    <div class="site-hdr-wrap">
+        <div class="site-hdr-account">
+            <a href="<?php echo Mage::getUrl('customer/account/login/'); ?>" class="site-hdr-acclink">Sign In</a>
+            <span class="site-hdr-acctext">or</span>
+            <a href="<?php echo Mage::getUrl('customer/account/create/'); ?>" class="site-hdr-acclink">Create an Account</a>
+        </div>
+        <div class="site-hdr-menurow">
+            <a href="<?php echo $this->getUrl('') ?>" class="site-hdr-logo">
+                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
+            </a>
+            <span class="site-hdr-mobmenuswich"><i class="icon-menu"></i></span>
+            <?php echo $this->getChildHtml('header_mainmenu') ?>
+            <div class="site-hdr-search-cart">
+                <div class="skip-content site-hdr-search">
+                    <?php echo $this->getChildHtml('topSearch') ?>
+                </div>
+                <div class="site-hdr-cart">
+                    <div class="header-minicart">
+                        <?php echo $this->getChildHtml('minicart_head'); ?>
+                    </div>
                 </div>
             </div>
         </div>
