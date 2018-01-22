@@ -5,56 +5,18 @@ $installer = $this;
 
 $installer->startSetup();
 
-Mage::getModel('core/config')
-    ->saveConfig('design/header/logo_src', 'images/logo.png', 'default', 0);
-
-Mage::getModel('core/config')
-    ->saveConfig('design/footer/copyright', '&copy; 2017 Store.', 'default', 0);
-
-$footerInformation = <<<HTML
-<div class="footer-menu-group">
-<h4 class="footer-menu-title">INFORMATION</h4>
-<ul class="footer-menu-list">
-<li class="footer-menu-item"><a href="{{store url=""}}about-magento-demo-store/">About</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}delivery-information/">Delivery information</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}privacy-policy/">Privacy Policy</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}terms-and-conditions/">Terms &amp; Conditions</a></li>
-</ul>
-</div>
+$drapdownBlock = <<<HTML
+<p><a class="site-hdr-additional-link"> <img alt="" class="site-hdr-additional-pic" src="{{media url="wysiwyg/gucci-bags.png"}}" /> <span class="site-hdr-additional-text">New Gucci bags limited colection Hurry up to buy!</span> </a></p>
 HTML;
-$footerInfoData = [
-    'content' => $footerInformation,
-    'identifier' => 'footer_second_info',
-    'title' => 'Footer INFORMATION',
+$blockData = [
+    'content' => $drapdownBlock,
+    'identifier' => 'header_menu_additional',
+    'title' => 'Header menu additional',
     'is_active' => 1
     ];
 
 Mage::getModel('cms/block')
-    ->addData($footerInfoData)
-    ->setStores([0,1])
-    ->save();
-
-$footerCustomer = <<<HTML
-<div class="footer-menu-group">
-<h4 class="footer-menu-title">CUSTOMER SERVICE</h4>
-<ul class="footer-menu-list">
-<li class="footer-menu-item"><a href="{{store url=""}}contact/">Contact</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}returns/">Returns</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}site-map/">Site Map</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}brands/">Brands</a></li>
-<li class="footer-menu-item"><a href="{{store url=""}}gift-vouchers/">Gift Vouchers</a></li>
-</ul>
-</div>
-HTML;
-$footerCustomerData = [
-    'content' => $footerCustomer,
-    'identifier' => 'footer_second_customserv',
-    'title' => 'Footer CUSTOMER SERVICE',
-    'is_active' => 1
-];
-
-Mage::getModel('cms/block')
-    ->addData($footerCustomerData)
+    ->addData($blockData)
     ->setStores([0,1])
     ->save();
 
