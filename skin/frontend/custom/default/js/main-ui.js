@@ -1,5 +1,6 @@
 // var domWindow = $j(window),
 //     domBody = $j('body');
+var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
 $j(document).on('ready', function() {
     // Dropdown object
@@ -54,8 +55,23 @@ $j(document).on('ready', function() {
         });
     })();
 
+    // Homepage offer background init
+    $j('.homepage-offer').each(function () {
+        var wSpace = $j(this),
+            bgSource = wSpace.find('.homepage-offer-background'),
+            bgUrl = bgSource.attr('src');
+
+            wSpace.attr('style','background-image: url(' + bgUrl + ')');
+    });
+
     // Responsive elements
     $j('.site-hdr-mobmenuswich').on('click', function() {
         $j(this).next().slideToggle();
     });
+
+    if(isTouchDevice) {
+        $j('.site-hdr-menu-dropdown').parent().find('> a').on('click',function (e) {
+            e.preventDefault();
+        });
+    }
 });
