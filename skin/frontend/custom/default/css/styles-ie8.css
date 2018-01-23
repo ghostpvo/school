@@ -3662,7 +3662,7 @@ body {
 
 .footer-before-container {
   max-width: 1460px;
-  margin: -30px auto 0;
+  margin: -27px auto 0;
   padding: 0 30px;
 }
 
@@ -8613,6 +8613,11 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
 }
 .homepage-offer-shopnow {
   margin-top: 88px;
+}
+.homepage-offer-shopnow .main-btn {
+  padding: 10px 39px;
+  font-family: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  letter-spacing: 1.2px;
 }
 
 .products-blk {

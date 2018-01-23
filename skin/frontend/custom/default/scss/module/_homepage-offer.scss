@@ -40,6 +40,12 @@
 
     &-shopnow {
         margin-top: 88px;
+
+        .main-btn {
+            padding: 10px 39px;
+            font-family: $f-stack-special;
+            letter-spacing: 1.2px;
+        }
     }
 
     @include bp (max-width, $bp-large) {
