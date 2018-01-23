@@ -19,7 +19,7 @@ $footerInformation = <<<HTML
 HTML;
 $footerInformation = ['content' => $footerInformation];
 Mage::getModel('cms/block')
-    ->load(4)
+    ->load('footer_second_info','identifier')
     ->addData($footerInformation)
     ->save();
 $footerCustomer = <<<HTML
@@ -36,7 +36,7 @@ $footerCustomer = <<<HTML
 HTML;
 $footerCustomer = ['content' => $footerCustomer];
 Mage::getModel('cms/block')
-    ->load(5)
+    ->load('footer_second_customserv', 'identifier')
     ->addData($footerCustomer)
     ->save();
 Mage::getModel('core/config')->reinit();

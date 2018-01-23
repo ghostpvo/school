@@ -89,7 +89,7 @@ HTML;
 $page = ['content' => $pageContent];
 
 Mage::getModel('cms/page')
-    ->load(2)
+    ->load('home', 'identifier')
     ->addData($page)
     ->save();
 
