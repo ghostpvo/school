@@ -3732,12 +3732,6 @@ body {
   .site-hdr .site-hdr-menu-dropdown .site-hdr-wrap {
     padding-top: 20px;
   }
-  .site-hdr .site-hdr-menu-dropdown .site-hdr-menu-category {
-    width: 50%;
-  }
-  .site-hdr .site-hdr-menu-dropdown .site-hdr-menu-additional {
-    display: none;
-  }
 }
 @media only screen and (max-width: 479px) {
   .site-hdr {
