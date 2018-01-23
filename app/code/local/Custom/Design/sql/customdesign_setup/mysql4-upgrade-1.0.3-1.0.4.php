@@ -8,17 +8,22 @@ $installer->startSetup();
 $dropdownBlock = <<<HTML
 <p><a class="site-hdr-additional-link"> <img alt="" class="site-hdr-additional-pic" src="{{skin url='images/ex/gucci-bags.png'}}" /> <span class="site-hdr-additional-text">New Gucci bags limited colection Hurry up to buy!</span> </a></p>
 HTML;
-$dropdownBlockData = [
-    'content' => $dropdownBlock,
-    'identifier' => 'header_menu_additional',
-    'title' => 'Header menu additional',
-    'is_active' => 1
-    ];
 
-Mage::getModel('cms/block')
-    ->addData($dropdownBlockData)
-    ->setStores([0,1])
-    ->save();
+$dropdownBlockLoad = Mage::getModel('cms/block')
+    ->load('header_menu_additional', 'identifier');
+
+if ($dropdownBlockLoad->getId()) {
+    $dropdownBlockLoad->addData(['content' => $dropdownBlock]);
+} else {
+    $dropdownBlockLoad->addData([
+        'content' => $dropdownBlock,
+        'identifier' => 'header_menu_additional',
+        'title' => 'Header menu additional',
+        'is_active' => 1
+    ]);
+}
+
+$dropdownBlockLoad->setStores([0,1])->save();
 
 $contentBlock = <<<HTML
 <div class="homepage-offer"><img alt="" class="homepage-offer-background" src="{{skin url='images/ex/offer-bg.png'}}" />
@@ -32,15 +37,15 @@ $contentBlock = <<<HTML
 <p class="blk-header-dscr">Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for</p>
 </div>
 <ul class="products-blk-list">
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item7.png"}}" /></a>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item7.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Red dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item8.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item8.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Dark/blue dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item9.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item9.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Brown dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
 </ul>
 </div>
 <div class="products-blk">
@@ -49,24 +54,24 @@ $contentBlock = <<<HTML
 <p class="blk-header-dscr">Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for</p>
 </div>
 <ul class="products-blk-list">
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item1.png"}}" /></a>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item1.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Red dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item2.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item2.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Dark/blue dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item3.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item3.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Brown dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item4.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item4.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Red dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item5.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item5.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Dark/blue dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
-<li class="products-blk-item"><a></a><a><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item6.png"}}" /></a>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
+<li class="products-blk-item"><a href=""></a><a href=""><img alt="" class="products-blk-itempic" src="{{skin url='images/ex/item6.png"}}" /></a>
 <h4 class="products-blk-itemtitle">Brown dress</h4>
-<a><span class="products-blk-itemprice">25.99$</span></a></li>
+<a href=""><span class="products-blk-itemprice">25.99$</span></a></li>
 </ul>
 </div>
 <div class="blog-items">
@@ -95,17 +100,21 @@ $contentBlock = <<<HTML
 </div>
 </div>
 HTML;
-$contentBlockData = [
-    'content' => $contentBlock,
-    'identifier' => 'home',
-    'title' => 'Home page',
-    'root_template' => 'one_column',
-    'is_active' => 1
-];
 
-Mage::getModel('cms/page')
-    ->addData($contentBlockData)
-    ->setStores([0,1])
-    ->save();
+$contentBlockLoad = Mage::getModel('cms/page')
+    ->load('home', 'identifier');
+
+if ($contentBlockLoad->getId()) {
+    $contentBlockLoad->addData(['content' => $contentBlock]);
+} else {
+    $contentBlockLoad->addData([
+        'content' => $contentBlock,
+        'identifier' => 'home',
+        'title' => 'Home page',
+        'is_active' => 1
+    ]);
+}
+
+$contentBlockLoad->setStores([0,1])->save();
 
 $installer->endSetup();
