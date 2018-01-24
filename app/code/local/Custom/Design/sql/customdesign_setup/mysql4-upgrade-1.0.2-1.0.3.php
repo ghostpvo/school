@@ -5,21 +5,24 @@ $installer = $this;
 
 $installer->startSetup();
 
-$drapdownBlock = <<<HTML
-<p><a class="site-hdr-additional-link"> <img alt="" class="site-hdr-additional-pic" src="{{media url="wysiwyg/gucci-bags.png"}}" /> <span class="site-hdr-additional-text">New Gucci bags limited colection Hurry up to buy!</span> </a></p>
+$dropdownBlock = <<<HTML
+<p><a class="site-hdr-additional-link"> <img alt="" class="site-hdr-additional-pic" src="{{skin url='images/ex/gucci-bags.png'}}" /> <span class="site-hdr-additional-text">New Gucci bags limited colection Hurry up to buy!</span> </a></p>
 HTML;
-$blockData = [
-    'content' => $drapdownBlock,
-    'identifier' => 'header_menu_additional',
-    'title' => 'Header menu additional',
-    'is_active' => 1
-    ];
 
-Mage::getModel('cms/block')
-    ->addData($blockData)
-    ->setStores([0,1])
-    ->save();
+$dropdownBlockLoad = Mage::getModel('cms/block')
+    ->load('header_menu_additional', 'identifier');
 
-Mage::getModel('core/config')->reinit();
+if ($dropdownBlockLoad->getId()) {
+    $dropdownBlockLoad->addData(['content' => $dropdownBlock]);
+} else {
+    $dropdownBlockLoad->addData([
+        'content' => $dropdownBlock,
+        'identifier' => 'header_menu_additional',
+        'title' => 'Header menu additional',
+        'is_active' => 1
+    ]);
+}
+
+$dropdownBlockLoad->setStores([0,1])->save();
 
 $installer->endSetup();

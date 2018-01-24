@@ -2,10 +2,12 @@
 /* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
 $installer->startSetup();
+
 Mage::getModel('core/config')
     ->saveConfig('design/header/logo_src', 'images/logo.png', 'default', 0);
 Mage::getModel('core/config')
     ->saveConfig('design/footer/copyright', '&copy; 2017 Store.', 'default', 0);
+
 $footerInformation = <<<HTML
 <div class="footer-menu-group">
 <h4 class="footer-menu-title">INFORMATION</h4>
@@ -17,11 +19,22 @@ $footerInformation = <<<HTML
 </ul>
 </div>
 HTML;
-$footerInformation = ['content' => $footerInformation];
-Mage::getModel('cms/block')
-    ->load('footer_second_info','identifier')
-    ->addData($footerInformation)
-    ->save();
+$footerInformationLoad = Mage::getModel('cms/block')
+    ->load('footer_second_info', 'identifier');
+
+if ($footerInformationLoad->getId()) {
+    $footerInformationLoad->addData(['content' => $footerInformation]);
+} else {
+    $footerInformationLoad->addData([
+        'content' => $footerInformation,
+        'identifier' => 'footer_second_info',
+        'title' => 'Footer info',
+        'is_active' => 1
+    ]);
+}
+
+$footerInformationLoad->setStores([0,1])->save();
+
 $footerCustomer = <<<HTML
 <div class="footer-menu-group">
 <h4 class="footer-menu-title">CUSTOMER SERVICE</h4>
@@ -34,10 +47,20 @@ $footerCustomer = <<<HTML
 </ul>
 </div>
 HTML;
-$footerCustomer = ['content' => $footerCustomer];
-Mage::getModel('cms/block')
-    ->load('footer_second_customserv', 'identifier')
-    ->addData($footerCustomer)
-    ->save();
-Mage::getModel('core/config')->reinit();
+$footerCustomerLoad = Mage::getModel('cms/block')
+    ->load('footer_second_customserv', 'identifier');
+
+if ($footerCustomerLoad->getId()) {
+    $footerCustomerLoad->addData(['content' => $footerCustomer]);
+} else {
+    $footerCustomerLoad->addData([
+        'content' => $footerCustomer,
+        'identifier' => 'footer_second_customserv',
+        'title' => 'Footer customer service',
+        'is_active' => 1
+    ]);
+}
+
+$footerCustomerLoad->setStores([0,1])->save();
+
 $installer->endSetup();

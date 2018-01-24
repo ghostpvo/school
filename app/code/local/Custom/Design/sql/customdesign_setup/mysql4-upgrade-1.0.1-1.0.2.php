@@ -2,7 +2,6 @@
 
 /* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
-
 $installer->startSetup();
 
 Mage::getModel('core/config')
@@ -22,17 +21,21 @@ $footerInformation = <<<HTML
 </ul>
 </div>
 HTML;
-$footerInfoData = [
-    'content' => $footerInformation,
-    'identifier' => 'footer_second_info',
-    'title' => 'Footer INFORMATION',
-    'is_active' => 1
-    ];
+$footerInformationLoad = Mage::getModel('cms/block')
+    ->load('footer_second_info', 'identifier');
 
-Mage::getModel('cms/block')
-    ->addData($footerInfoData)
-    ->setStores([0,1])
-    ->save();
+if ($footerInformationLoad->getId()) {
+    $footerInformationLoad->addData(['content' => $footerInformation]);
+} else {
+    $footerInformationLoad->addData([
+        'content' => $footerInformation,
+        'identifier' => 'footer_second_info',
+        'title' => 'Footer information',
+        'is_active' => 1
+    ]);
+}
+
+$footerInformationLoad->setStores([0,1])->save();
 
 $footerCustomer = <<<HTML
 <div class="footer-menu-group">
@@ -46,17 +49,21 @@ $footerCustomer = <<<HTML
 </ul>
 </div>
 HTML;
-$footerCustomerData = [
-    'content' => $footerCustomer,
-    'identifier' => 'footer_second_customserv',
-    'title' => 'Footer CUSTOMER SERVICE',
-    'is_active' => 1
-];
+$footerCustomerLoad = Mage::getModel('cms/block')
+    ->load('footer_second_customserv', 'identifier');
 
-Mage::getModel('cms/block')
-    ->addData($footerCustomerData)
-    ->setStores([0,1])
-    ->save();
+if ($footerCustomerLoad->getId()) {
+    $footerCustomerLoad->addData(['content' => $footerCustomer]);
+} else {
+    $footerCustomerLoad->addData([
+        'content' => $footerCustomer,
+        'identifier' => 'footer_second_customserv',
+        'title' => 'Footer customer service',
+        'is_active' => 1
+    ]);
+}
+
+$footerCustomerLoad->setStores([0,1])->save();
 
 Mage::getModel('core/config')->reinit();
 
