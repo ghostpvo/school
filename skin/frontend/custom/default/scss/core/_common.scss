@@ -574,19 +574,18 @@ a.button:hover {
 
 .breadcrumbs {
     overflow: hidden;
-    margin: -15px 0 15px;
 }
 
 .breadcrumbs li {
     float: left;
-    font-size: $f-size-xs;
     font-family: $f-stack-special;
     text-transform: uppercase;
+    font-size: 14px;
 }
 
 .breadcrumbs a {
     float: left;
-    color: $c-text;
+    color: $c-dark;
 }
 
 .breadcrumbs a:hover {
@@ -600,7 +599,8 @@ a.button:hover {
 
 .breadcrumbs span {
     float: left;
-    padding: 0 7px;
+    padding: 0 3px;
+    color: $c-dark;
 }
 
 @include bp(max-width, $bp-medium) {
@@ -1919,4 +1919,14 @@ body.customer-account .data-table {
     float: none;
     max-height: 50px;
     width: auto;
+}
+
+/* ============================================ *
+ * Category page
+ * ============================================ */
+
+.category-main-wrap {
+    width: $max-content-width;
+    max-width: 100%;
+    margin: 12px auto;
 }
