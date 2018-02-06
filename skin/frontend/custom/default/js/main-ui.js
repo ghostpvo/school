@@ -65,8 +65,26 @@ $j(document).on('ready', function() {
     });
 
     // Responsive elements
-    $j('.site-hdr-mobmenuswich').on('click', function() {
-        $j(this).next().slideToggle();
+    $j('.mob-switcher').on('click', function() {
+        var obj = $j(this).next(),
+            active = 'mob-active';
+
+        if(obj.hasClass(active)) {
+            obj.removeClass(active);
+            obj.prev().removeClass('active');
+        } else {
+            $j('.' + active).each(function () {
+                var thisEl = $j(this);
+                console.log(thisEl.parents('.' + active).length);
+                if(!thisEl.parents('.' + active).length) {
+                    thisEl.removeClass(active);
+                    thisEl.prev().removeClass('active');
+                }
+            });
+
+            obj.addClass(active);
+            obj.prev().addClass('active');
+        }
     });
 
     if(isTouchDevice) {

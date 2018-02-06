@@ -42,6 +42,12 @@ body.catalogsearch-result-index .page-title h1 {
     border-bottom: none;
 }
 
+.category-title {
+    @include bp(max-width, $max-content-width) {
+        padding: 0 15px;
+    }
+}
+
 .category-image {
     margin-bottom: 10px;
 }
@@ -812,6 +818,69 @@ $productsGridActionHeight: 85px;
 
                 &:hover {
                     background: $c-dark + #222;
+                }
+            }
+        }
+    }
+
+    @include bp(max-width, $max-content-width) {
+        padding: 0 15px;
+    }
+
+    @include bp(max-width, 770px) {
+        padding-left: 0;
+        padding-right: 0;
+
+        > .col-left,
+        .col-main {
+            width: 100%;
+        }
+
+        .category-products .products-grid {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 21px;
+
+            > .item {
+                margin-bottom: 26px;
+            }
+        }
+
+        .col-main .toolbar {
+            margin-bottom: 27px;
+        }
+
+        .toolbar-bottom .toolbar {
+            margin-bottom: 0;
+        }
+    }
+
+    @include bp(max-width, 530px) {
+        .col-main {
+            .toolbar {
+                position: relative;
+                padding: 5px 15px 35px;
+
+                label {
+                    display: inline-block;
+                    width: 60px;
+                    margin-right: 0;
+                }
+
+                .sort-by {
+                    margin-right: 12px;
+                }
+
+                .limiter {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 15px;
+                }
+
+                .view-mode {
+                    label {
+                        display: none;
+                    }
                 }
             }
         }

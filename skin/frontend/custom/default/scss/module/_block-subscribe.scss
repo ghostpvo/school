@@ -103,4 +103,33 @@
             width: 100%;
         }
     }
+
+    @include bp (max-width, 450px) {
+        padding: 24px 15px 37px;
+
+        .block-subscribe-title {
+            font-size: 14px;
+
+            span {
+                display: none;
+            }
+        }
+
+        .block-subscribe-form {
+            margin-top: 12px;
+            padding-right: 99px;
+
+            .input-text {
+                height: 35px;
+                letter-spacing: 0;
+            }
+
+            .button {
+                width: 90px;
+                line-height: 35px;
+                letter-spacing: 0;
+                font-size: 13px;
+            }
+        }
+    }
 }

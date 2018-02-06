@@ -37,9 +37,6 @@ $mq-fixed-value: 1024;
 /* -------------------------------------------- *
  * Primary Banner
  */
-body.cms-home .main-container {
-  padding-top: 20px;
-}
 body.cms-home .slideshow-container {
   margin-top: 0;
 }

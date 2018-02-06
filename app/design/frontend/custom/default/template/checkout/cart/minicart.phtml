@@ -44,9 +44,7 @@
         <i class="icon-cart"></i>
         <span class="site-hdr-cartcount"><?php echo $_cartQty; ?></span>
     </span>
-    <div class="dropdown-parent-object">
-        <ul class="site-hdr-cartitems">
-            <?php echo $this->getChildHtml('minicart_content');?>
-        </ul>
+    <div class="dropdown-parent-object site-hdr-cartitems">
+        <?php echo $this->getChildHtml('minicart_content');?>
     </div>
 </div>

@@ -32,28 +32,89 @@
  */
 ?>
 <?php if($this->canShowBlock()): ?>
-<div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Shop By') ?></span></strong>
-    </div>
-    <div class="block-content toggle-content">
+<div class="sidabar-unit">
+    <h4 class="sidabar-unit-title mob-switcher">SHOP BY <span>Filter</span></h4>
+    <div class="sidabar-unit-body">
         <?php echo $this->getStateHtml() ?>
         <?php if ($this->getLayer()->getState()->getFilters()): ?>
             <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
         <?php endif; ?>
         <?php if($this->canShowOptions()): ?>
-            <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p>
-            <dl id="narrow-by-list">
-                <?php $_filters = $this->getFilters() ?>
-                <?php foreach ($_filters as $_filter): ?>
-                <?php if($_filter->getItemsCount()): ?>
-                    <dt><?php echo $this->__($_filter->getName()) ?></dt>
-                    <dd><?php echo $_filter->getHtml() ?></dd>
-                <?php endif; ?>
-                <?php endforeach; ?>
-            </dl>
-            <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+        <?php $_filters = $this->getFilters() ?>
+        <?php foreach ($_filters as $_filter): ?>
+            <div class="sb-shopby">
+            <?php if($_filter->getItemsCount()): ?>
+                <h5 class="sb-shopby-title"><?php echo $this->__($_filter->getName()) ?></h5>
+                <div class="sb-shopby-list"><?php echo $_filter->getHtml() ?></div>
+            <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
         <?php endif; ?>
     </div>
 </div>
 <?php endif; ?>
+
+<!--            <li class="sb-shopby-item">-->
+<!--                <span class="sb-shopby-link">-->
+<!--                    <span class="sb-shopby-item-name">$150.00 - $250.00</span>-->
+<!--                    <span class="sb-shopby-item-count">2</span>-->
+<!--                </span>-->
+<!--            </li>-->
+
+<div class="sidabar-unit sidabar-unit-top">
+    <h4 class="sidabar-unit-title">TOP 5 PRODUCTS</h4>
+    <div class="sb-top">
+        <ul class="sb-top-list">
+            <li class="sb-top-item">
+                <a href="" class="sb-top-link">
+                    <img src="<?php echo $this->getSkinUrl('images/ex/little-item.png') ?>" alt="" class="sb-top-item-pic">
+                    <div class="sb-top-item-data">
+                        <span class="sb-top-item-title">Red Dress</span>
+                        <span class="sb-top-item-price">25$</span>
+                    </div>
+                </a>
+                <a href="" class="sb-top-item-buy">Buy</a>
+            </li>
+            <li class="sb-top-item">
+                <a href="" class="sb-top-link">
+                    <img src="<?php echo $this->getSkinUrl('images/ex/little-item.png') ?>" alt="" class="sb-top-item-pic">
+                    <div class="sb-top-item-data">
+                        <span class="sb-top-item-title">Red Dress</span>
+                        <span class="sb-top-item-price">25$</span>
+                    </div>
+                </a>
+                <a href="" class="sb-top-item-buy">Buy</a>
+            </li>
+            <li class="sb-top-item">
+                <a href="" class="sb-top-link">
+                    <img src="<?php echo $this->getSkinUrl('images/ex/little-item.png') ?>" alt="" class="sb-top-item-pic">
+                    <div class="sb-top-item-data">
+                        <span class="sb-top-item-title">Red Dress</span>
+                        <span class="sb-top-item-price">25$</span>
+                    </div>
+                </a>
+                <a href="" class="sb-top-item-buy">Buy</a>
+            </li>
+            <li class="sb-top-item">
+                <a href="" class="sb-top-link">
+                    <img src="<?php echo $this->getSkinUrl('images/ex/little-item.png') ?>" alt="" class="sb-top-item-pic">
+                    <div class="sb-top-item-data">
+                        <span class="sb-top-item-title">Red Dress</span>
+                        <span class="sb-top-item-price">25$</span>
+                    </div>
+                </a>
+                <a href="" class="sb-top-item-buy">Buy</a>
+            </li>
+            <li class="sb-top-item">
+                <a href="" class="sb-top-link">
+                    <img src="<?php echo $this->getSkinUrl('images/ex/little-item.png') ?>" alt="" class="sb-top-item-pic">
+                    <div class="sb-top-item-data">
+                        <span class="sb-top-item-title">Red Dress</span>
+                        <span class="sb-top-item-price">25$</span>
+                    </div>
+                </a>
+                <a href="" class="sb-top-item-buy">Buy</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -63,4 +63,8 @@
         color: #9E9D9A;
         letter-spacing: 2px;
     }
+
+    @include bp (max-width, $max-content-width) {
+        padding: 0 15px;
+    }
 }

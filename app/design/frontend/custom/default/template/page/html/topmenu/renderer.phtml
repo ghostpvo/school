@@ -90,7 +90,7 @@ foreach ($children as $child) {
     $_hasChildren = ($child->hasChildren()) ? 'has-children' : '';
 
     $html .= '<div class="site-hdr-menu-category">';
-    $html .= '<strong class="site-hdr-menudrop-title">'. $this->escapeHtml($this->__($child->getName())) .'</strong>';
+    $html .= '<strong class="site-hdr-menudrop-title mob-switcher">'. $this->escapeHtml($this->__($child->getName())) .'</strong>';
 
     if (!empty($_hasChildren)) {
         $html .= '<ul class="site-hdr-category-items">';

@@ -574,6 +574,10 @@ a.button:hover {
 
 .breadcrumbs {
     overflow: hidden;
+
+    @include bp(max-width, $max-content-width) {
+        padding: 0 10px;
+    }
 }
 
 .breadcrumbs li {
@@ -729,7 +733,7 @@ a.button:hover {
     position: relative;
     max-width: $max-container-width;
     margin: 0 auto;
-    padding: $trim-small;
+    padding: 0;
 
     &:after {
         @include clearfix;
@@ -738,13 +742,20 @@ a.button:hover {
 
 .main-container {
     max-width: $max-layout-width;
+
+    @include bp(max-width, $max-content-width) {
+        padding-top: 0;
+
+        .category-main-wrap {
+            margin-top: 0;
+        }
+    }
 }
 
 @include bp(min-width, 480px) {
-
     .main-container,
     .footer-container {
-        padding: $trim;
+        padding: 0;
     }
 }
 
@@ -877,7 +888,7 @@ a.button:hover {
     .col3-layout .col-right,
     .col3-layout .col-wrapper .col-main {
         padding: 0;
-        margin-bottom: 10px; // Since columns are stacked, we want there to be vertical spacing
+        //margin-bottom: 10px; // Since columns are stacked, we want there to be vertical spacing
         float: none;
         width: auto;
     }
@@ -1794,7 +1805,6 @@ $toolbar-icon-padding-offset: 8px;
     .col2-left-layout,
     .col2-right-layout,
     .col3-layout {
-        .sorter,
         .pager {
             width: 100%;
         }
@@ -1929,4 +1939,29 @@ body.customer-account .data-table {
     width: $max-content-width;
     max-width: 100%;
     margin: 12px auto;
+
+    @include bp(max-width, 450px) {
+        display: flex;
+        flex-direction: column;
+
+        > .category-title {
+            order: -1;
+            margin: 15px 0;
+            font-size: 30px;
+
+            * {
+                margin: 0;
+                padding-bottom: 1px;
+            }
+        }
+
+        .category-image {
+            height: 220px;
+            margin-bottom: 28px;
+        }
+
+        .col-left-first {
+            margin-bottom: 13px;
+        }
+    }
 }
