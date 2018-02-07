@@ -1169,7 +1169,7 @@ a.button:hover {
 }
 
 .breadcrumbs strong {
-  color: #636363;
+  color: #282723;
   font-weight: normal;
 }
 
@@ -2523,6 +2523,7 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
   .category-main-wrap {
     display: flex;
     flex-direction: column;
+    margin-bottom: 9px;
   }
   .category-main-wrap > .category-title {
     order: -1;
@@ -2538,7 +2539,7 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
     margin-bottom: 28px;
   }
   .category-main-wrap .col-left-first {
-    margin-bottom: 13px;
+    margin-bottom: 9px;
   }
 }
 
@@ -4827,11 +4828,18 @@ body {
   padding: 7px 16px 19px;
 }
 .sb-shopby li {
-  padding: 4px 0 3px;
+  padding: 5px 0 3px;
 }
 .sb-shopby li a {
   display: block;
   text-decoration: none;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.15px;
+  color: #282723;
+  font-family: "Source Serif Pro", "Times New Roman", serif;
+}
+.sb-shopby li span {
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.15px;
@@ -5701,7 +5709,7 @@ p.product-name a:hover {
   width: 22.5%;
 }
 .prod-list-page .col-main {
-  width: 76%;
+  width: 75.7%;
 }
 .prod-list-page .col-main .toolbar {
   display: flex;
@@ -5709,7 +5717,7 @@ p.product-name a:hover {
   align-items: center;
   margin-top: 0;
   margin-bottom: 40px;
-  padding: 13px 20px;
+  padding: 13px 18px 13px 20px;
   line-height: 1.3;
   border: none;
   background: #E1DFE0;
@@ -5733,7 +5741,7 @@ p.product-name a:hover {
 .prod-list-page .col-main .toolbar label {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 15px;
+  margin-right: 13px;
   line-height: 1.2;
   color: #282723;
 }
@@ -5744,6 +5752,10 @@ p.product-name a:hover {
   padding-left: 2px;
   font-size: 13px;
   border: none;
+}
+.prod-list-page .col-main .toolbar select {
+  font-family: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  background: #fff;
 }
 .prod-list-page .col-main .toolbar .sort-by {
   margin-right: 28px;
@@ -5886,10 +5898,10 @@ p.product-name a:hover {
   .prod-list-page .category-products .products-grid {
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 21px;
+    padding-bottom: 16px;
   }
   .prod-list-page .category-products .products-grid > .item {
-    margin-bottom: 26px;
+    margin-bottom: 29px;
   }
   .prod-list-page .col-main .toolbar {
     margin-bottom: 27px;
@@ -5899,9 +5911,30 @@ p.product-name a:hover {
   }
 }
 @media only screen and (max-width: 530px) {
+  .prod-list-page .products-grid .product-name,
+  .prod-list-page .products-list .product-name {
+    margin-top: 0;
+  }
+  .prod-list-page .products-grid .product-name a,
+  .prod-list-page .products-list .product-name a {
+    font-size: 15px;
+  }
+  .prod-list-page .products-grid .price-box,
+  .prod-list-page .products-list .price-box {
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+  .prod-list-page .products-grid .product-image,
+  .prod-list-page .products-list .product-image {
+    margin-bottom: 8px;
+  }
+  .prod-list-page .products-grid .actions,
+  .prod-list-page .products-list .actions {
+    padding-top: 7px;
+  }
   .prod-list-page .col-main .toolbar {
     position: relative;
-    padding: 5px 15px 35px;
+    padding: 6px 15px 37px;
   }
   .prod-list-page .col-main .toolbar label {
     display: inline-block;

@@ -30,8 +30,13 @@
 .category-image {
     position: relative;
     height: 200px;
+    margin-top: 68px;
     background-size: cover;
     background-position: center center;
+
+    @include bp(max-width, $bp-xlarge) {
+        margin-top: 0;
+    }
 }
 
 .categorylandingMainblock {

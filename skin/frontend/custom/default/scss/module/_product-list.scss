@@ -624,7 +624,7 @@ $productsGridActionHeight: 85px;
     }
 
     .col-main {
-        width: 76%;
+        width: 75.7%;
 
         .toolbar {
             display: flex;
@@ -632,7 +632,7 @@ $productsGridActionHeight: 85px;
             align-items: center;
             margin-top: 0;
             margin-bottom: 40px;
-            padding: 13px 20px;
+            padding: 13px 18px 13px 20px;
             line-height: 1.3;
             border: none;
             background: #E1DFE0;
@@ -664,7 +664,7 @@ $productsGridActionHeight: 85px;
             label {
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 15px;
+                margin-right: 13px;
                 line-height: 1.2;
                 color: $c-dark;
             }
@@ -676,6 +676,11 @@ $productsGridActionHeight: 85px;
                 padding-left: 2px;
                 font-size: 13px;
                 border: none;
+            }
+
+            select {
+                font-family: $f-stack-special;
+                background: #fff;
             }
 
             .sort-by {
@@ -839,10 +844,10 @@ $productsGridActionHeight: 85px;
         .category-products .products-grid {
             padding-left: 15px;
             padding-right: 15px;
-            padding-bottom: 21px;
+            padding-bottom: 16px;
 
             > .item {
-                margin-bottom: 26px;
+                margin-bottom: 29px;
             }
         }
 
@@ -856,10 +861,34 @@ $productsGridActionHeight: 85px;
     }
 
     @include bp(max-width, 530px) {
+        .products-grid,
+        .products-list {
+            .product-name {
+                margin-top: 0;
+
+                a {
+                    font-size: 15px;
+                }
+            }
+
+            .price-box {
+                margin-top: 2px;
+                margin-bottom: 10px;
+            }
+
+            .product-image {
+                margin-bottom: 8px;
+            }
+
+            .actions {
+                padding-top: 7px;
+            }
+        }
+
         .col-main {
             .toolbar {
                 position: relative;
-                padding: 5px 15px 35px;
+                padding: 6px 15px 37px;
 
                 label {
                     display: inline-block;
@@ -885,4 +914,8 @@ $productsGridActionHeight: 85px;
             }
         }
     }
+}
+
+@include bp(max-width, 530px) {
+
 }

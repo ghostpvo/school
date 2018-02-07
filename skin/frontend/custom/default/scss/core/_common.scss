@@ -597,7 +597,7 @@ a.button:hover {
 }
 
 .breadcrumbs strong {
-    color: $c-text;
+    color: $c-dark;
     font-weight: normal;
 }
 
@@ -1943,6 +1943,7 @@ body.customer-account .data-table {
     @include bp(max-width, 450px) {
         display: flex;
         flex-direction: column;
+        margin-bottom: 9px;
 
         > .category-title {
             order: -1;
@@ -1961,7 +1962,7 @@ body.customer-account .data-table {
         }
 
         .col-left-first {
-            margin-bottom: 13px;
+            margin-bottom: 9px;
         }
     }
 }
