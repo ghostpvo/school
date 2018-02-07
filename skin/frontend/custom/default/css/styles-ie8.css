@@ -3876,6 +3876,7 @@ body {
   margin-top: -18px;
   text-align: center;
   font-size: 16px;
+  text-transform: uppercase;
   line-height: 34px;
   font-family: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   color: #282723;
@@ -4586,7 +4587,7 @@ p.product-name a:hover {
   border: none;
 }
 .prod-list-page .col-main .toolbar select {
-  font-family: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-family: "Source Serif Pro", "Times New Roman", serif;
   background: #fff;
 }
 .prod-list-page .col-main .toolbar .sort-by {
