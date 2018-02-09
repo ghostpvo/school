@@ -128,5 +128,9 @@ Category layered navigation layout
                 </block>
             </block>
         </reference>
+
+        <reference name="root">
+            <block type="catalog/category_view" name="category.quick_view" as="category.quick_view" template="catalog/category/quick-view.phtml" />
+        </reference>
     </catalog_category_layered>
 </layout>

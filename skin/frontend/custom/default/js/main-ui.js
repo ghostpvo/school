@@ -55,6 +55,53 @@ $j(document).on('ready', function() {
         });
     })();
 
+    // Modal windows
+    var hidePopup = function () {
+        $j('body').removeClass('popup-shows');
+        $j('.m-modal-window-wrap').hide();
+        $j('.modal-wind-show.active').removeClass('active');
+    }
+
+    $j('.modal-wind-show').on('click', function(e){
+        e.preventDefault();
+        hidePopup();
+        var it = $j(this).attr('data-type');
+        it = $j('#' + it);
+        it.fadeIn();
+        $j('body').addClass('popup-shows');
+    });
+
+    $j('.close-md-window').on('click', function(e){
+        e.preventDefault();
+        hidePopup();
+    });
+
+    $j('.m-modal-window-wrap').on('click', function(e){
+        if ($j(e.target).closest('.window-contens').length) {
+            return;
+        } else {
+            hidePopup();
+        }
+    });
+
+    // Product quick view
+    (function () {
+        var popup = $j('#quick-view-popup .window-contens'),
+            pic, name, price;
+
+        $j('.prod-list-page .prod-quick-view').on('click',function () {
+            var wSpace = $j(this).parents('.item');
+
+            pic = wSpace.find('img').attr('src');
+            name = wSpace.find('.product-name a').text();
+            price = wSpace.find('.regular-price .price').text();
+
+            popup.find('.product-image img').attr('src', pic);
+            popup.find('.product-title').text(name);
+            popup.find('.product-price').text(price);
+        });
+    })();
+
     // Homepage offer background init
     $j('.homepage-offer').each(function () {
         var wSpace = $j(this),
@@ -63,6 +110,8 @@ $j(document).on('ready', function() {
 
             wSpace.attr('style','background-image: url(' + bgUrl + ')');
     });
+
+    // prod-quick-view
 
     // Responsive elements
     $j('.mob-switcher').on('click', function() {

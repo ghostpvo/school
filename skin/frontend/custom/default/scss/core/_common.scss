@@ -1966,3 +1966,59 @@ body.customer-account .data-table {
         }
     }
 }
+
+.m-modal-window-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, .15);
+    -webkit-overflow-scrolling: touch;
+
+    .window-contens {
+        position: relative;
+        z-index: 2;
+        height: auto;
+        max-width: 98%;
+        width: 400px;
+        margin: 150px auto;
+        padding: 25px;
+        text-align: center;
+        background: #fff;
+        border: 20px solid #E1DFE0;
+
+        .close-md-window {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            color: #B7B7B7;
+            font-size: 15px;
+            text-decoration: none;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+
+    &#quick-view-popup {
+        .product-image {
+            display: inline-block;
+            border: none;
+
+            img {
+                display: inline-block;
+            }
+        }
+
+        .product-title {
+            display: block;
+            padding-top: 10px;
+            color: $c-dark;
+        }
+    }
+}
